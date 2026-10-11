@@ -1,0 +1,13 @@
+services:
+  vid2text:
+    build: .
+    image: vid2text
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./input:/data/input      # put your videos here
+      - ./output:/data/output    # transcripts appear here
+      - models:/models           # speech models are downloaded once and kept
+
+volumes:
+  models:
